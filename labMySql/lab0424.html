@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-24 js</title>
+</head>
+<body>
+    <pre id="info"></pre>
+    <script>
+        let info = document.getElementById('info');
+        let str = 'this is awesome class';
+        console.log(str.split('awesome'));
+        console.log(str.split('awesome').join('wonderful'))
+
+        let arr = [2,3,4];
+        console.log(arr.includes(3));//true
+        console.log(3 in arr); //false
+        console.log(1 in arr);//true
+
+        let obj = {name: 'Lily', age: 25};
+        console.log(name in obj); //true
+        console.log('name' in obj);// true
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Homework1</title>
+  </head>
+  <body>
+    <script>
+<<<<<<< HEAD
+        const oriData = [
+      { "sid": "1", "name": "程式設計", "parent_sid": "0" },
+      { "sid": "2", "name": "繪圖軟體", "parent_sid": "0" },
+      { "sid": "3", "name": "網際網路應用", "parent_sid": "0" },
+      
+      { "sid": "4", "name": "PHP", "parent_sid": "1" },
+      { "sid": "5", "name": "JavaScript", "parent_sid": "1" },
+      { "sid": "7", "name": "PS", "parent_sid": "2" },
+      { "sid": "8", "name": "Chrome", "parent_sid": "3" },
+      { "sid": "9", "name": "騙錢的", "parent_sid": "3" },
+      { "sid": "10", "name": "C++", "parent_sid": "1" },
+      { "sid": "16", "name": "椅拉", "parent_sid": "2" }
+    ]
+        let finalObj=[];
+    
+        for (let item of oriData){
+            if (item.parent_sid === "0"){
+                item.nodes=[];
+                finalObj.push(item);
+            }
+        }
+        console.log(finalObj);
+        //console會把最後運算的放進來, 不一定顯示當下處理的解果)
+        console.log(JSON.stringify(finalObj,null,4));
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+        //用JSON.stringify,就會把當下的資料先印出來
+        for (let obj of finalObj){
+            for(let item of oriData){
+                if(item.parent_sid === obj.sid){
+                obj.nodes.push(item)
+                }
+            }
+        }
+        console.log(finalObj)
+        console.log(JSON.stringify(finalObj,null,4));
+
+    // let finalObj=[];
+    // for (let obj of oriData){
+    //     // console.log(obj);
+    //     if (obj.parent_sid == "0"){
+    //         obj.nodes=[]
+    //         finalObj.push(obj);
+    //     }else{
+    //         let ps = obj.parent_sid;
+    //         switch(ps){
+    //             case "1":
+    //                 finalObj[0].nodes.push(obj);
+    //                 break;
+    //             case "2":
+    //                 finalObj[1].nodes.push(obj);
+    //                 break;
+    //             case "3":
+    //                 finalObj[2].nodes.push(obj);
+    //                 break;
+    //         }
+    //     }
+    // }
+    // console.log(finalObj)
+    
+    // const sortedData = [
+    //   { "sid": "1", "name": "程式設計", "parent_sid": "0", 
+      
+    //   nodes:[  
+    //     { "sid": "4", "name": "PHP", "parent_sid": "1" },
+    //     { "sid": "5", "name": "JavaScript", "parent_sid": "1" }, 
+    //     { "sid": "10", "name": "C++", "parent_sid": "1" }] },
+      
+    //   { "sid": "2", "name": "繪圖軟體", "parent_sid": "0" ,
+    //   nodes:[
+    //     { "sid": "7", "name": "PS", "parent_sid": "2" },
+    //     { "sid": "16", "name": "椅拉", "parent_sid": "2" }]},
+      
+    //   { "sid": "3", "name": "網際網路應用", "parent_sid": "0", nodes:[ { "sid": "8", "name": "Chrome", "parent_sid": "3" }, { "sid": "9", "name": "騙錢的", "parent_sid": "3" }] },
+    // ]
+=======
+      const oriData = [
+        { sid: "1", name: "程式設計", parent_sid: "0" },
+        { sid: "2", name: "繪圖軟體", parent_sid: "0" },
+        { sid: "3", name: "網際網路應用", parent_sid: "0" },
+        { sid: "4", name: "PHP", parent_sid: "1" },
+        { sid: "5", name: "JavaScript", parent_sid: "1" },
+        { sid: "7", name: "PS", parent_sid: "2" },
+        { sid: "8", name: "Chrome", parent_sid: "3" },
+        { sid: "9", name: "騙錢的", parent_sid: "3" },
+        { sid: "10", name: "C++", parent_sid: "1" },
+        { sid: "16", name: "椅拉", parent_sid: "2" },
+      ];
+      const parentSid = new Map();
+      //把parent_sid相同的都集中在一起
+      for (let obj of oriData) {
+        if (obj.parent_sid !== "0") {
+          if (!parentSid.get(obj.parent_sid)) {
+            parentSid.set(obj.parent_sid, []);
+          }
+          parentSid.get(obj.parent_sid).push(obj);
+        }
+      }
+      console.log(parentSid);
+      //Map(3) {'1' => Array(3), '2' => Array(2), '3' => Array(2)}
+
+      const sortResult = [];
+      for (let obj of oriData) {
+        if (obj.parent_sid === "0") {
+          obj.node = parentSid.get(obj.sid);
+          sortResult.push(obj);
+        }
+      }
+      console.log(sortResult);
+      // let finalObj=[];
+      // for (let obj of oriData){
+      //     // console.log(obj);
+      //     if (obj.parent_sid == "0"){
+      //         obj.nodes=[]
+      //         finalObj.push(obj);
+      //     }else{
+      //         let ps = obj.parent_sid;
+      //         switch(ps){
+      //             case "1":
+      //                 finalObj[0].nodes.push(obj);
+      //                 break;
+      //             case "2":
+      //                 finalObj[1].nodes.push(obj);
+      //                 break;
+      //             case "3":
+      //                 finalObj[2].nodes.push(obj);
+      //                 break;
+      //         }
+      //     }
+      // }
+      // console.log(finalObj)
+>>>>>>> 13afb673c61afccca01dfdc6536b6246e31ab176
+    </script>
+  </body>
+</html>
